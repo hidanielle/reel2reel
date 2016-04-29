@@ -57,6 +57,12 @@ p {
   font-size: .8em;
 }
 
+.container {
+  position: relative;
+  height: 100%;
+  // min-height: 500px;
+}
+
 .ep-url {
   font-weight: normal;
   color: $primary-color;
@@ -168,5 +174,16 @@ nav {
   margin-top: 10px;
   @include respond-to(small) {
     display: none;
+  }
+}
+
+@media (max-width: 773px) and (max-height: 435px) {
+  .container {
+    min-height: 600px;
+  }
+  .intro {
+    h1 {
+      max-width: 400px;
+    }
   }
 }
