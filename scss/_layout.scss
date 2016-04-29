@@ -9,7 +9,7 @@ html {
 
 body {
   width: 100%; 
-  background-color: $primary-color;
+  background-color: #ffffff;
   text-rendering: optimizelegibility;
   text-size-adjust: none;
   -moz-osx-font-smoothing: grayscale;
@@ -21,13 +21,6 @@ body {
   position: absolute;
   width: 100%;
   height: 100px;
-}
-
-a {
-  &:hover,
-  &:focus {
-    border-bottom: 1px solid;
-  }
 }
 
 h1,
@@ -57,17 +50,25 @@ p {
   font-size: .8em;
 }
 
+.text-link {
+  text-decoration: none;
+  border-bottom: 2px dotted $primary-color;
+  &:hover,
+  &:focus {
+    border-bottom: 2px solid;
+  } 
+}
+
 .container {
+  background-color: $primary-color;
   position: relative;
-  height: 100%;
+  height: 90%;
   // min-height: 500px;
 }
 
 .ep-url {
   font-weight: normal;
   color: $primary-color;
-  text-decoration: none;
-  border-bottom: 2px dotted $primary-color;
   &:after {
     font-family: 'FontAwesome';
     content: '\f08e';
@@ -98,6 +99,18 @@ p {
 header {
   @extend %fixed-pos;
   padding: 20px;
+}
+
+footer {
+  background-color: $secondary-color;
+  color: white;
+  padding: 30px;
+  .social {
+    a {
+      color: white;
+      text-shadow: none;
+    }
+  }
 }
 
 nav {
@@ -157,12 +170,19 @@ nav {
 
 .latest-ep {
   @extend %fixed-pos;
+  text-align: center;
   bottom: 0;
   color: white;
   background-color: $secondary-color;
   padding: 30px;
   @include respond-to(small) {
     padding: 20px;
+  }
+  a {
+    &:hover,
+    &:focus {
+      color: white;
+    }
   }
 }
 
@@ -174,6 +194,151 @@ nav {
   margin-top: 10px;
   @include respond-to(small) {
     display: none;
+  }
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 50px 30px;
+  p {
+    font-size: 2em;
+    line-height: 1.3;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  strong {
+    font-weight: bold;
+  }
+  em {
+    color: darken($primary-color, 10%);
+  }
+  @include respond-to(small) {
+    p {
+      width: 100%;
+      font-size: 1.5em;
+    }
+  }
+}
+
+$head-size: 300px;
+
+.person {
+  position: relative;
+  height: $head-size;
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: $head-size;
+    height: $head-size;
+  }
+  h2 {
+    @extend %vertical-center;
+    color: $secondary-color;
+    text-transform: none;
+    font-size: 5em;
+    a {
+      color: #55acee;
+      transition: color .5s ease;
+      &:hover,
+      &:focus {
+        color: $primary-color;
+      }
+    }
+  }
+  @include respond-to(small) {
+    $head-size: 100px;
+    height: $head-size;
+    margin-bottom: 20px;
+    &:before {
+      width: $head-size;
+      height: $head-size;
+    }
+    h2 {
+      font-size: 2em;
+    }
+  }
+}
+
+.mike {
+  padding-left: $head-size;
+  &:before {
+    left: 0;
+    background: {
+      image: url("../img/Mike.png");
+      repeat: no-repeat;
+      size: 100%;
+    }
+  }
+  @include respond-to(small) {
+    $head-size: 100px;
+    padding-left: $head-size;
+  }
+}
+
+.mark {
+  text-align: right;
+  padding-right: $head-size;
+  margin-bottom: 160px;
+  &:before {
+    right: 0;
+    background: {
+      image: url("../img/Mark.png");
+      repeat: no-repeat;
+      size: 100%;
+    }
+  }
+  @include respond-to(small) {
+    $head-size: 100px;
+    margin-bottom: 50px;
+    padding-right: $head-size;
+  }
+}
+
+.twitter-widget {
+  text-align: center;
+  margin: 160px 0;
+  @include respond-to(small) {
+    margin: 60px 0;
+    height: 200px;
+    overflow: hidden;
+  }
+}
+
+.list {
+  background-color: $primary-color;
+  .text-link {
+    border-bottom: 3px dotted white;
+    color: black;
+    &:hover {
+      border-bottom: 3px solid white;
+    }
+  }
+}
+
+.ep-list {
+  margin: 30px 0 100px 0;
+  line-height: 2;
+  font-size: 1.3em;
+  li {
+    a {
+      &:after {
+        font-family: 'FontAwesome';
+        content: '\f08e';
+        margin-left: 5px;
+        font-size: 0.8em;
+      }
+    }
+    @include respond-to(small) {
+      margin: 10px 0;
+    }
+  }
+  @include respond-to(small) {
+    font-size: 1em;
+    margin-bottom: 30px;
   }
 }
 

@@ -1,7 +1,7 @@
 var gulp          = require('gulp')
     browserSync   = require('browser-sync').create(),
     sass          = require('gulp-sass'),
-    jade          = require('gulp-jade'),
+    pug          = require('gulp-pug'),
     notify        = require("gulp-notify"),
     autoprefixer  = require('gulp-autoprefixer'),
     jshint        = require('gulp-jshint'),
@@ -10,10 +10,10 @@ var gulp          = require('gulp')
     imagemin      = require('gulp-imagemin'),
     del           = require('del');
 
-gulp.task('jade', function() {
-  return gulp.src('./*.jade')
-    .pipe(jade())
-    .pipe(gulp.dest('./dist/'))
+gulp.task('pug', function() {
+  return gulp.src('./**.pug')
+    .pipe(pug())
+    .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('sass', function () {
@@ -53,13 +53,14 @@ gulp.task('copy', function() {
    .pipe(gulp.dest('./dist/'));
 });
 
+
 gulp.task('watch', ['default'], function() {
 
   browserSync.init({
     server: "./dist"
   });
 
-  // gulp.watch('./*.jade', ['jade'], browserSync.reload);
+  // gulp.watch('index.pug', ['pug'], browserSync.reload);
   gulp.watch('./scss/**/*.scss', ['sass'], browserSync.reload);
   gulp.watch('./scripts/**/*.js', ['js'], browserSync.reload);
   gulp.watch('./img/**/*', ['images'], browserSync.reload);
@@ -68,6 +69,6 @@ gulp.task('watch', ['default'], function() {
 
 // To run other tasks AFTER folder has been cleaned out
 gulp.task('default', ['clean'], function() {
-    gulp.start('images', 'copy', 'jade', 'sass', 'js');
+    gulp.start('pug', 'copy', 'sass', 'js', 'images');
 });
 

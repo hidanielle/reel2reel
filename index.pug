@@ -56,10 +56,37 @@ html(lang="en")
 
       section.latest-ep
         h2 Latest Episode 
-        a.ep-url(href="#" target="_blank") #[span.ep-title.h2]
+        a.ep-url.text-link(href="#" target="_blank") #[span.ep-title.h2]
         a.ext-link(href="https://itunes.apple.com/ca/podcast/reel-2-reel-podcast/id1001209243?mt=2" target="_blank") #[span or listen on iTunes]
 
         p.ep-description
+
+      section.content
+        .person.mike #[h2 I'm Mike #[a(href="#" target="_blank") #[i.fa.fa-twitter]]]
+        .person.mark #[h2 #[a(href="#" target="_blank") #[i.fa.fa-twitter]] I'm Mark]
+
+        p Listen to us #[strong build up] and #[strong rip apart actors] every week, and bring you all the latest movie #[em news], #[em gossip], and #[em reviews].
+
+        .twitter-widget
+          a.twitter-timeline(href='https://twitter.com/reel2reelpod', data-widget-id='726129236516298753') Tweets by @reel2reelpod
+          script.
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+
+      .list
+        section.content
+          h2 More Episodes
+          ul.ep-list
+
+          p For a full list of episodes, head over to #[a.text-link(href="https://soundcloud.com/reel2reelpodcast" target="_blank") Soundcloud] or #[a.text-link(href="https://itunes.apple.com/ca/podcast/reel-2-reel-podcast/id1001209243?mt=2" target="_blank") iTunes]
+
+      footer
+        nav
+          ul.social
+            li #[a(href="https://twitter.com/reel2reelpod" target="_blank") #[i.fa.fa-twitter]]
+            li #[a(href="https://www.facebook.com/reel2reelpodcast" target="_blank") #[i.fa.fa-facebook]]
+            li #[a(href="https://soundcloud.com/reel2reelpodcast" target="_blank") #[i.fa.fa-soundcloud]]
+            li #[a(href="https://itunes.apple.com/ca/podcast/reel-2-reel-podcast/id1001209243?mt=2" target="_blank") #[i.fa.fa-apple]]
     
     
     script(src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous")
