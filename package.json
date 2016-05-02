@@ -17,5 +17,8 @@
   },
   "dependencies": {
     "del": "^2.2.0"
+  },
+  "scripts": {
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   }
 }

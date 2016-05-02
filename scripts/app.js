@@ -9,7 +9,7 @@ SC.get('/users/reel2reelpodcast/tracks').then(function(tracks){
   $('.ep-url').attr('href', tracks[0].permalink_url);
   $('.ep-description').html(tracks[0].description);
 
-  var epList = $('.ep-list')
+  var epList = $('.ep-list');
 
   $.each(tracks, function(i) {
     // $epList.append('<li><a href="'+tracks[i].permalink_url+'" target="_blank">'+tracks[i].title+'</a></li>');

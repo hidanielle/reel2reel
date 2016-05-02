@@ -23,8 +23,7 @@ gulp.task('sass', function () {
         title: "Error compiling scss"
       })))
    .pipe(autoprefixer('last 2 version'))
-   .pipe(gulp.dest('./dist/styles'))
-   .pipe(notify({ message: 'Styles task complete' }));
+   .pipe(gulp.dest('./dist/styles'));
 });
 
 gulp.task('js', function() {
@@ -33,15 +32,13 @@ gulp.task('js', function() {
     .pipe(jshint.reporter('default'))
     .pipe(concat('app.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./dist/js'))
-    .pipe(notify({ message: 'JS task complete' }));
+    .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('images', function() {
   return gulp.src('./img/**/*')
     .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-    .pipe(gulp.dest('./dist/img'))
-    .pipe(notify({ message: 'Images task complete' }));
+    .pipe(gulp.dest('./dist/img'));
 });
 
 gulp.task('clean', function() {
@@ -49,7 +46,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('copy', function() {
-   gulp.src('./favicon.ico')
+   gulp.src(['./favicon.ico', 'CNAME'])
    .pipe(gulp.dest('./dist/'));
 });
 
