@@ -240,6 +240,18 @@ $head-size: 300px;
     color: $secondary-color;
     text-transform: none;
     font-size: 5em;
+    padding: 20px 40px;
+    border-radius: 50px;
+    background-color: $primary-color;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
     a {
       color: #55acee;
       transition: color .5s ease;
@@ -259,6 +271,7 @@ $head-size: 300px;
     }
     h2 {
       font-size: 2em;
+      text-align: center;
     }
   }
 }
@@ -272,6 +285,10 @@ $head-size: 300px;
       repeat: no-repeat;
       size: 100%;
     }
+  }
+  h2:before {
+    @include triangle(right, $primary-color, 15px, 15px, 25px);
+    left: -15px;
   }
   @include respond-to(small) {
     $head-size: 100px;
@@ -290,6 +307,10 @@ $head-size: 300px;
       repeat: no-repeat;
       size: 100%;
     }
+  }
+  h2:before {
+    @include triangle(left, $primary-color, 15px, 15px, 25px);
+    right: -15px;
   }
   @include respond-to(small) {
     $head-size: 100px;

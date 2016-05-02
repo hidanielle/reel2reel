@@ -49,3 +49,25 @@
     }
   }
 }
+
+
+// Triangles
+//----------------------------------------------------------
+
+@mixin triangle($whichBorder, $color, $base1, $base2, $height )  {
+  position: absolute;
+  width: 0;
+  height: 0;
+  content: '';
+  z-index: 2;
+  
+  border-#{$whichBorder}: $height solid $color; 
+  
+  @if $whichBorder == top or $whichBorder == bottom {
+    border-left:   $base1 solid transparent;
+    border-right:  $base2 solid transparent;
+  } @else if $whichBorder == right or $whichBorder == left {
+    border-bottom: $base1 solid transparent;
+    border-top:    $base2 solid transparent;
+  }
+}
