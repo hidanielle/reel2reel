@@ -32,3 +32,12 @@
 .cf {
     *zoom: 1;
 }
+
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
