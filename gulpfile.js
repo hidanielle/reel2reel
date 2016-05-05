@@ -12,7 +12,7 @@ var gulp          = require('gulp')
 
 gulp.task('pug', function() {
   return gulp.src('./**.pug')
-    .pipe(pug())
+    .pipe(pug({pretty: true}))
     .pipe(gulp.dest('./dist/'));
 });
 
