@@ -22,3 +22,6 @@ SC.get('/users/reel2reelpodcast/tracks').then(function(tracks){
 
   });
 });
+
+window.sr = ScrollReveal();
+sr.reveal('[data-scroll]');

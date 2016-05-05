@@ -29,6 +29,8 @@ html(lang="en")
     link(rel="stylesheet", href="/styles/app.css")
     link(rel="shortcut icon", type="image/x-icon", href="favicon.ico")
 
+    script(src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js")
+
   body
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -42,15 +44,15 @@ html(lang="en")
       header
         nav
           ul.social
-            li #[a(href="https://twitter.com/reel2reelpod" target="_blank") #[i.fa.fa-twitter]] #[span.sr-only Follow us on Twitter]
-            li #[a(href="https://www.facebook.com/reel2reelpodcast" target="_blank") #[i.fa.fa-facebook]] #[span.sr-only Follow us on Facebook]
-            li #[a(href="https://soundcloud.com/reel2reelpodcast" target="_blank") #[i.fa.fa-soundcloud]] #[span.sr-only Listen on Soundcloud]
-            li #[a(href="https://itunes.apple.com/ca/podcast/reel-2-reel-podcast/id1001209243?mt=2" target="_blank") #[i.fa.fa-apple]] #[span.sr-only Listen on Itunes]
+            li #[a(href="https://twitter.com/reel2reelpod" target="_blank" title="Follow us on Twitter") #[i.fa.fa-twitter]] #[span.sr-only Follow Reel 2 Reel Podcast on Twitter]
+            li #[a(href="https://www.facebook.com/reel2reelpodcast" target="_blank" title="Follow us on Facebook") #[i.fa.fa-facebook]] #[span.sr-only Follow Reel 2 Reel Podcast on Facebook]
+            li #[a(href="https://soundcloud.com/reel2reelpodcast" target="_blank" title="Listen to us on Soundcloud") #[i.fa.fa-soundcloud]] #[span.sr-only Listen to the Reel 2 Reel podcast on Soundcloud]
+            li #[a(href="https://itunes.apple.com/ca/podcast/reel-2-reel-podcast/id1001209243?mt=2" target="_blank" title="Listen to us on Itunes") #[i.fa.fa-apple]] #[span.sr-only Listen to the Reel 2 Reel podcast on Itunes]
 
 
       section.intro
         h1
-          span.logo Reel 2 Reel Podcast
+          span.logo(data-scroll) Reel 2 Reel Podcast
 
       section.latest-ep
         h2 Latest Episode 
@@ -60,12 +62,12 @@ html(lang="en")
         p.ep-description
 
       section.content
-        .person.mike #[h2 I'm Mike #[a(href="#" target="_blank") #[i.fa.fa-twitter]]]
-        .person.mark #[h2 #[a(href="#" target="_blank") #[i.fa.fa-twitter]] I'm Mark]
+        .person.mike(data-scroll) #[h2 I'm Mike #[a(href="#" target="_blank" title="Follow Mike on Twitter") #[i.fa.fa-twitter]]]
+        .person.mark(data-scroll) #[h2 #[a(href="#" target="_blank" title="Follow Mark on Twitter") #[i.fa.fa-twitter]] I'm Mark]
 
         p Listen to us #[strong build up] and #[strong rip apart actors] every week, and bring you all the latest movie #[em news], #[em gossip], and #[em reviews].
 
-        .twitter-widget
+        .twitter-widget(data-scroll)
           a.twitter-timeline(href='https://twitter.com/reel2reelpod', data-widget-id='726129236516298753') Tweets by @reel2reelpod
           script.
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
@@ -81,12 +83,12 @@ html(lang="en")
       footer
         nav
           ul.social
-            li #[a(href="https://twitter.com/reel2reelpod" target="_blank") #[i.fa.fa-twitter]] #[span.sr-only Follow us on Twitter]
-            li #[a(href="https://www.facebook.com/reel2reelpodcast" target="_blank") #[i.fa.fa-facebook]] #[span.sr-only Follow us on Facebook]
-            li #[a(href="https://soundcloud.com/reel2reelpodcast" target="_blank") #[i.fa.fa-soundcloud]] #[span.sr-only Listen on Soundcloud]
-            li #[a(href="https://itunes.apple.com/ca/podcast/reel-2-reel-podcast/id1001209243?mt=2" target="_blank") #[i.fa.fa-apple]] #[span.sr-only Listen on Itunes]
+            li #[a(data-scroll href="https://twitter.com/reel2reelpod" target="_blank" title="Follow us on Twitter") #[i.fa.fa-twitter]] #[span.sr-only Follow Reel 2 Reel Podcast on Twitter]
+            li #[a(data-scroll href="https://www.facebook.com/reel2reelpodcast" target="_blank" title="Follow us on Facebook") #[i.fa.fa-facebook]] #[span.sr-only Follow Reel 2 Reel Podcast on Facebook]
+            li #[a(data-scroll href="https://soundcloud.com/reel2reelpodcast" target="_blank" title="Listen to us on Soundcloud") #[i.fa.fa-soundcloud]] #[span.sr-only Listen to the Reel 2 Reel podcast on Soundcloud]
+            li #[a(data-scroll href="https://itunes.apple.com/ca/podcast/reel-2-reel-podcast/id1001209243?mt=2" target="_blank" title="Listen to us on Itunes") #[i.fa.fa-apple]] #[span.sr-only Listen to the Reel 2 Reel podcast on Itunes]
     
     
     script(src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous")
-    script(src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js")
+    script(src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js")
     script(src="/js/app.js")

@@ -198,7 +198,7 @@ nav {
 }
 
 .content {
-  margin: 0 auto;
+  margin: 30px auto 0 auto;
   max-width: 1200px;
   width: 100%;
   padding: 50px 30px;
@@ -257,7 +257,7 @@ $head-size: 300px;
       transition: color .5s ease;
       &:hover,
       &:focus {
-        color: $primary-color;
+        color: white;
       }
     }
   }
