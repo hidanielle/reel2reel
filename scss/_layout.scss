@@ -373,3 +373,10 @@ $head-size: 300px;
     }
   }
 }
+
+@media only screen and (max-width: 320px) { 
+  .person h2 {
+    padding: 10px;
+    font-size: 1.7em;
+  }
+}
