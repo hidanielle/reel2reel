@@ -97,8 +97,16 @@ p {
 }
 
 header {
-  @extend %fixed-pos;
-  padding: 20px;
+  position: fixed;
+  background-color: $secondary-color;
+  padding: 10px;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  z-index: 9999;
+  a {
+    color: #ffffff;
+  }
 }
 
 footer {
@@ -114,18 +122,56 @@ footer {
 }
 
 nav {
-  text-align: center;
+  max-width: 75em;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  > * {
+    align-items: center;
+  }
+  ul {
+    display: flex;
+  }
   li {
-    display: inline;
-    margin-right: 20px;
+    font-weight: 700;
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+  }
+  .main {
+    a {
+      text-decoration: none;
+      line-height: 1rem;
+      &:after {
+        content: '›';
+        font-size: 1.5rem;
+        margin-left: 5px;
+        transition: all .5s ease;
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        color: $primary-color;
+        &:after {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.text-logo {
+  font-family: 'Economica', sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  strong {
+    font-weight: 700;
   }
 }
 
 .social {
-  font-size: 2em;
+  font-size: 1.5rem;
   a {
-    color: $secondary-color;
-    text-shadow: 2px 2px 0 white;
     i {
       transition: all .2s ease-out;
       transform: scale(1);
@@ -199,7 +245,7 @@ nav {
 
 .content {
   margin: 30px auto 0 auto;
-  max-width: 1200px;
+  max-width: 75em;
   width: 100%;
   padding: 50px 30px;
   p {

@@ -8,8 +8,11 @@ $secondary-color: #2b2b2b; // gray
 // Fonts
 //----------------------------------------------------------
 
-$font-arial: Arial, sans-serif;
-$default-font: $font-arial;
+$font-roboto: 'Roboto Condensed', sans-serif;
+$font-econ: 'Economica', sans-serif;
+
+$default-font: $font-roboto;
+$brand-font: $font-econ;
 
 
 // Breakpoints
